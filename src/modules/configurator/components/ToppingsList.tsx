@@ -1,7 +1,8 @@
 import React from "react";
-import { Topping, TOPPINGS } from "modules/configurator";
+import { TOPPINGS } from "../const";
+import { Topping } from "./Topping";
 
-export const Toppings: React.FC = () => {
+export const ToppingsList: React.FC = () => {
   return (
     <section>
       <ul>
