@@ -1,13 +1,13 @@
 import React from "react";
+import { ToppingsList } from "./ToppingsList";
+import { Size } from "./Size";
 import { Discount } from "./Discount";
 import { Price } from "./Price";
-import { Size } from "./Size";
-import { Toppings } from "./Toppings";
 
 export const Configurator: React.FC = () => {
   return (
     <>
-      <Toppings />
+      <ToppingsList />
       <Size />
       <Discount />
       <Price />
