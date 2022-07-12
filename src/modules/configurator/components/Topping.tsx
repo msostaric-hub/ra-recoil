@@ -4,8 +4,10 @@ import { ToppingsInfo } from "modules/configurator";
 export const Topping: React.FC<ToppingsInfo> = ({ name, price }) => {
   return (
     <li>
-      <label htmlFor={name}>{name}</label>
-      <input type="checkbox" name={name} id={name} value={price} />
+      <label htmlFor={name}>
+        {name} {price}
+      </label>
+      <input type="checkbox" name={name} id={name} />
     </li>
   );
 };
