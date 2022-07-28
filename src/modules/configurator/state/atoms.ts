@@ -8,7 +8,7 @@ const topping = atom<ToppingsInfo[]>({
 
 const discount = atom<number>({
   key: "configurator.discount",
-  default: 0,
+  default: undefined,
 });
 
 export const configuratorAtoms = { topping, discount };

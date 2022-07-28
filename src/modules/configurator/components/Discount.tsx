@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import { useSetRecoilState } from "recoil";
-import { configuratorAtoms } from "../state";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { configuratorAtoms, configuratorSelectors } from "../state";
 
 export const Discount: React.FC = () => {
   const [discountValue, setDiscountValue] = useState<number>(0);
   const setRecoilValue = useSetRecoilState(configuratorAtoms.discount);
+  const discountCode = useRecoilValue(configuratorSelectors.totalPrice);
+
+  useEffect(() => {
+    console.log(discountCode);
+  }, [discountCode]);
 
   return (
     <section>
@@ -13,7 +18,7 @@ export const Discount: React.FC = () => {
       <input
         value={discountValue}
         onChange={(e) => setDiscountValue(Number(e.currentTarget.value))}
-        type="number"
+        type="string"
         name="disscount"
         id="disscount"
       />
