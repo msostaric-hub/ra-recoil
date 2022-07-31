@@ -6,8 +6,8 @@ export const ToppingsList: React.FC = () => {
   return (
     <section>
       <ul>
-        {TOPPINGS.map(({ name, price }) => (
-          <Topping key={name} name={name} price={price} />
+        {TOPPINGS.map(({ name, price, id }) => (
+          <Topping id={id} key={name} name={name} price={price} />
         ))}
       </ul>
     </section>

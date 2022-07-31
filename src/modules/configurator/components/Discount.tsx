@@ -6,11 +6,11 @@ import { configuratorAtoms, configuratorSelectors } from "../state";
 export const Discount: React.FC = () => {
   const [discountValue, setDiscountValue] = useState<number>(0);
   const setRecoilValue = useSetRecoilState(configuratorAtoms.discount);
-  const discountCode = useRecoilValue(configuratorSelectors.totalPrice);
+  const calculatedPrice = useRecoilValue(configuratorSelectors.totalPrice);
 
   useEffect(() => {
-    console.log(discountCode);
-  }, [discountCode]);
+    console.log(calculatedPrice);
+  }, [calculatedPrice]);
 
   return (
     <section>

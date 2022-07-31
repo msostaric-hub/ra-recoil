@@ -5,10 +5,11 @@ const totalPrice = selector({
   key: "configurator.topping.totalPrice",
   get: ({ get }) => {
     const discountCode = get(configuratorAtoms.discount);
-    const calculatedPrice = 20;
-    return discountCode
-      ? calculatedPrice - calculatedPrice / 4
-      : calculatedPrice;
+    const toppingValue = Number(get(configuratorAtoms.toppings));
+
+    let sum = toppingValue;
+
+    return discountCode ? sum - sum / 4 : sum;
   },
 });
 
