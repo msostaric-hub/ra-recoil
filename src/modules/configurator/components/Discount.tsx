@@ -1,16 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { configuratorAtoms, configuratorSelectors } from "../state";
+import { useSetRecoilState } from "recoil";
+import { configuratorAtoms } from "../state";
 
 export const Discount: React.FC = () => {
   const [discountValue, setDiscountValue] = useState<number>(0);
   const setRecoilValue = useSetRecoilState(configuratorAtoms.discount);
-  const calculatedPrice = useRecoilValue(configuratorSelectors.totalPrice);
-
-  useEffect(() => {
-    console.log(calculatedPrice);
-  }, [calculatedPrice]);
 
   return (
     <section>

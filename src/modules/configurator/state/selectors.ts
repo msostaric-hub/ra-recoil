@@ -4,12 +4,11 @@ import { configuratorAtoms } from "./atoms";
 const totalPrice = selector({
   key: "configurator.topping.totalPrice",
   get: ({ get }) => {
-    const discountCode = get(configuratorAtoms.discount);
+    // const discountCode = get(configuratorAtoms.discount);
     const toppingValue = Number(get(configuratorAtoms.toppings));
+    let sum = 0;
 
-    let sum = toppingValue;
-
-    return discountCode ? sum - sum / 4 : sum;
+    return toppingValue ? sum + toppingValue : sum - toppingValue;
   },
 });
 
