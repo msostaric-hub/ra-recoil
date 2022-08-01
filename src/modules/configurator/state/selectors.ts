@@ -6,9 +6,10 @@ const totalPrice = selector({
   get: ({ get }) => {
     // const discountCode = get(configuratorAtoms.discount);
     const toppingValue = Number(get(configuratorAtoms.toppings));
+    const sizeValue = Number(get(configuratorAtoms.pizzaSize));
     let sum = 0;
 
-    return toppingValue ? sum + toppingValue : sum - toppingValue;
+    return sizeValue + toppingValue;
   },
 });
 

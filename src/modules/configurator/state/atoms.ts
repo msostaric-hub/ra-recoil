@@ -11,4 +11,9 @@ const discount = atom<number>({
   default: undefined,
 });
 
-export const configuratorAtoms = { toppings, discount };
+const pizzaSize = atom<number>({
+  key: "configurator.size",
+  default: 0,
+});
+
+export const configuratorAtoms = { toppings, discount, pizzaSize };
