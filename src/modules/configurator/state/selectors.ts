@@ -4,10 +4,10 @@ import { configuratorAtoms } from "./atoms";
 const totalPrice = selector({
   key: "configurator.topping.totalPrice",
   get: ({ get }) => {
-    // const discountCode = get(configuratorAtoms.discount);
+    const discountCode = get(configuratorAtoms.discount);
     const toppingValue = Number(get(configuratorAtoms.toppings));
     const sizeValue = Number(get(configuratorAtoms.pizzaSize));
-    let sum = 0;
+    let sum = sizeValue + toppingValue;
 
     // if(toppingValue){
     //   sum + toppingValue;
@@ -17,7 +17,7 @@ const totalPrice = selector({
     //   return sum;
     // }
 
-    return sizeValue + toppingValue;
+    return discountCode ? sum - sum / 4 : sum; // 25% discount if the discount is entered
   },
 });
 
