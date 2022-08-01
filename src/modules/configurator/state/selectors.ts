@@ -9,6 +9,14 @@ const totalPrice = selector({
     const sizeValue = Number(get(configuratorAtoms.pizzaSize));
     let sum = 0;
 
+    // if(toppingValue){
+    //   sum + toppingValue;
+    //   return sum
+    // }else{
+    //   sum - toppingValue;
+    //   return sum;
+    // }
+
     return sizeValue + toppingValue;
   },
 });
